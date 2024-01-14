@@ -55,8 +55,13 @@ namespace Logiciel_de_gestion_de_cave_a_vin.Models
 
         public static void AjouterBouteille(ListView listView, TextBox tbxNom, TextBox tbxMillesime,
             TextBox tbxGardeDebut, TextBox tbxGardeFin, ComboBox cbbAppelation, ComboBox cbbCouleur,
-            ComboBox cbbEmplacemnt, ComboBox cbbTiroire)
+            ComboBox cbbEmplacemnt, ComboBox cbbTiroire, ComboBox cbbCave)
         {
+            if (!Utilitaire.ValideSaisie(tbxNom, tbxMillesime, tbxGardeDebut, tbxGardeFin))
+            {
+                // Sortir de la méthode si la validation échoue
+                return;
+            }
             string nomBouteille = tbxNom.Text;
             DateTime millesimeBouteille = new DateTime(int.Parse(tbxMillesime.Text), 1, 1);
             int Gardedebut = Int32.Parse(tbxGardeDebut.Text);
@@ -65,14 +70,13 @@ namespace Logiciel_de_gestion_de_cave_a_vin.Models
             var selectedAppelation = cbbAppelation.SelectedItem as DescriptionBouteilleAppelation;
             int? IdAppelation = selectedAppelation?.IdAppelation;
             var selectedcouleur = cbbCouleur.SelectedItem as DescriptionBouteilleCouleur;
+            var IDCave = cbbCave.SelectedIndex;
             int? IdCouleur = selectedcouleur?.IdCouleur;
+            int Emplacement = Convert.ToInt32(cbbEmplacemnt.Text);
+            int Tirroire = Convert.ToInt32(cbbTiroire.Text);
 
             // Valider les champs avant d'ajouter une bouteille
-            if (!Utilitaire.ValideSaisie(tbxNom, tbxMillesime, tbxGardeDebut, tbxGardeFin))
-            {
-                // Sortir de la méthode si la validation échoue
-                return;
-            }
+
 
             // Appeler la méthode de confirmation
             if (!ConfirmerAjoutBouteille(cbbEmplacemnt, cbbTiroire))
@@ -92,8 +96,10 @@ namespace Logiciel_de_gestion_de_cave_a_vin.Models
                     GardeConseilleDebut = Gardedebut,
                     GardeConseilleFin = Gardefin,
                     IdAppelation = IdAppelation.Value,
-                    IdCave = 1,
+                    IdCave = IDCave,
                     IdCouleur = IdCouleur.Value,
+                    EmplacementBouteille = Emplacement,
+                    NumeroTiroir = Tirroire
 
                 };
 
@@ -265,9 +271,9 @@ namespace Logiciel_de_gestion_de_cave_a_vin.Models
                     //Chargement de l'emplacement dans la cave
                     cbbCave.SelectedValue = bouteille.IdCave;
 
-                    cbbTiroire.SelectedValue = bouteille.NumeroTiroir;
+                    cbbTiroire.Text = bouteille.NumeroTiroir.ToString();
                     Utilitaire.RemplireComboboxTiroirePlace(cbbCave, cbbTiroire, cbbEmplacemnt);
-                    cbbEmplacemnt.SelectedValue = bouteille.EmplacementBouteille;
+                    cbbEmplacemnt.Text = bouteille.EmplacementBouteille.ToString();
 
                     // Sélectionnez l'appellation et la couleur correspondantes dans les ComboBoxes
                     cbbAppelation.SelectedValue = bouteille.IdAppelation;

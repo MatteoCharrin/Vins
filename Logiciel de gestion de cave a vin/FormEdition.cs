@@ -136,7 +136,7 @@ namespace Logiciel_de_gestion_de_cave_a_vin
         private void RemplireComboboxTiroir()
         {
             Cave CaveSelectione = (Cave)cbbCave.SelectedItem;
-            int NumeroTiroir = cbbEmplacemnt.SelectedIndex;
+            int NumeroTiroir = cbbTiroire.SelectedIndex;
             List<Bouteille> bouteilles;
             using (MlmvinContext context = new MlmvinContext())
             {
@@ -145,7 +145,7 @@ namespace Logiciel_de_gestion_de_cave_a_vin
 
             foreach (var bouteille in bouteilles)
             {
-                cbbEmplacemnt.Items.Remove(bouteille.EmplacementBouteille);
+                cbbEmplacemnt.Items.Remove(bouteille.EmplacementBouteille + 1);
             }
 
         }
@@ -170,6 +170,7 @@ namespace Logiciel_de_gestion_de_cave_a_vin
         {
             if (cbbTiroire.SelectedIndex != -1)
             {
+                Utilitaire.RemplireComboboxTiroirePlace(cbbCave, cbbTiroire, cbbEmplacemnt, true);
                 RemplireComboboxTiroir();
             }
 
@@ -239,7 +240,7 @@ namespace Logiciel_de_gestion_de_cave_a_vin
         {
             if (BouteilleEstSelect)
             {
-                GestionBouteille.AjouterBouteille(lvGeneral, tbxNom, tbxMillesime, tbxGardeDebut, tbxGardeFin, cbbAppelation, cbbCouleur, cbbEmplacemnt, cbbTiroire);
+                GestionBouteille.AjouterBouteille(lvGeneral, tbxNom, tbxMillesime, tbxGardeDebut, tbxGardeFin, cbbAppelation, cbbCouleur, cbbEmplacemnt, cbbTiroire, cbbCave);
                 GestionBouteille.ChargerListeView(lvGeneral);
             }
             else
@@ -264,6 +265,11 @@ namespace Logiciel_de_gestion_de_cave_a_vin
                 GestionCave.Delete(lvGeneral);
 
             }
+
+        }
+
+        private void lvGeneral_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
         }
     }

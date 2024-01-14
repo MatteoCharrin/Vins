@@ -38,6 +38,13 @@
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnClose = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.lblCave = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.lblTirroire = new System.Windows.Forms.Label();
+            this.lblEmplacement = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -53,7 +60,7 @@
             this.btnAjouter.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnAjouter.FlatAppearance.BorderSize = 0;
             this.btnAjouter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAjouter.Font = new System.Drawing.Font("Gabriola", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnAjouter.Font = new System.Drawing.Font("Gabriola", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnAjouter.ForeColor = System.Drawing.Color.White;
             this.btnAjouter.Location = new System.Drawing.Point(595, 484);
             this.btnAjouter.Name = "btnAjouter";
@@ -68,7 +75,7 @@
             this.btnApogee.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(117)))), ((int)(((byte)(188)))));
             this.btnApogee.FlatAppearance.BorderSize = 0;
             this.btnApogee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnApogee.Font = new System.Drawing.Font("Gabriola", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnApogee.Font = new System.Drawing.Font("Gabriola", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnApogee.ForeColor = System.Drawing.Color.White;
             this.btnApogee.Location = new System.Drawing.Point(881, 484);
             this.btnApogee.Name = "btnApogee";
@@ -82,6 +89,7 @@
             // 
             this.tbxRecherche.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(29)))), ((int)(((byte)(36)))));
             this.tbxRecherche.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tbxRecherche.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.tbxRecherche.ForeColor = System.Drawing.Color.White;
             this.tbxRecherche.Location = new System.Drawing.Point(744, 151);
             this.tbxRecherche.Multiline = true;
@@ -104,15 +112,16 @@
             // 
             // lvBouteille
             // 
-            this.lvBouteille.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(29)))), ((int)(((byte)(36)))));
+            this.lvBouteille.BackColor = System.Drawing.Color.White;
             this.lvBouteille.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.lvBouteille.Font = new System.Drawing.Font("Agency FB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lvBouteille.ForeColor = System.Drawing.Color.White;
+            this.lvBouteille.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lvBouteille.ForeColor = System.Drawing.Color.Black;
             this.lvBouteille.Location = new System.Drawing.Point(14, 140);
             this.lvBouteille.Name = "lvBouteille";
             this.lvBouteille.Size = new System.Drawing.Size(541, 435);
             this.lvBouteille.TabIndex = 6;
             this.lvBouteille.UseCompatibleStateImageBehavior = false;
+            this.lvBouteille.Click += new System.EventHandler(this.lvBouteille_Click);
             // 
             // label2
             // 
@@ -150,6 +159,87 @@
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(0, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(38, 15);
+            this.label3.TabIndex = 10;
+            this.label3.Text = "label3";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(18)))), ((int)(((byte)(23)))));
+            this.label4.Font = new System.Drawing.Font("Gabriola", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(595, 244);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(178, 59);
+            this.label4.TabIndex = 11;
+            this.label4.Text = "Emplacement : ";
+            // 
+            // lblCave
+            // 
+            this.lblCave.AutoSize = true;
+            this.lblCave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(18)))), ((int)(((byte)(23)))));
+            this.lblCave.Font = new System.Drawing.Font("Gabriola", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblCave.ForeColor = System.Drawing.Color.White;
+            this.lblCave.Location = new System.Drawing.Point(793, 244);
+            this.lblCave.Name = "lblCave";
+            this.lblCave.Size = new System.Drawing.Size(83, 59);
+            this.lblCave.TabIndex = 12;
+            this.lblCave.Text = "CAVE";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(18)))), ((int)(((byte)(23)))));
+            this.label5.Font = new System.Drawing.Font("Gabriola", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(595, 331);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(116, 59);
+            this.label5.TabIndex = 13;
+            this.label5.Text = "Tirroire : ";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(18)))), ((int)(((byte)(23)))));
+            this.label6.Font = new System.Drawing.Font("Gabriola", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(793, 331);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(178, 59);
+            this.label6.TabIndex = 14;
+            this.label6.Text = "Emplacement : ";
+            // 
+            // lblTirroire
+            // 
+            this.lblTirroire.AutoSize = true;
+            this.lblTirroire.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(18)))), ((int)(((byte)(23)))));
+            this.lblTirroire.Font = new System.Drawing.Font("Gabriola", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblTirroire.ForeColor = System.Drawing.Color.White;
+            this.lblTirroire.Location = new System.Drawing.Point(704, 331);
+            this.lblTirroire.Name = "lblTirroire";
+            this.lblTirroire.Size = new System.Drawing.Size(56, 59);
+            this.lblTirroire.TabIndex = 15;
+            this.lblTirroire.Text = "NB";
+            // 
+            // lblEmplacement
+            // 
+            this.lblEmplacement.AutoSize = true;
+            this.lblEmplacement.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(18)))), ((int)(((byte)(23)))));
+            this.lblEmplacement.Font = new System.Drawing.Font("Gabriola", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblEmplacement.ForeColor = System.Drawing.Color.White;
+            this.lblEmplacement.Location = new System.Drawing.Point(977, 331);
+            this.lblEmplacement.Name = "lblEmplacement";
+            this.lblEmplacement.Size = new System.Drawing.Size(56, 59);
+            this.lblEmplacement.TabIndex = 16;
+            this.lblEmplacement.Text = "NB";
+            // 
             // FormAccueil
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -157,6 +247,13 @@
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.BackgroundImage = global::Logiciel_de_gestion_de_cave_a_vin.Properties.Resources.noir;
             this.ClientSize = new System.Drawing.Size(1162, 665);
+            this.Controls.Add(this.lblEmplacement);
+            this.Controls.Add(this.lblTirroire);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.lblCave);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnAjouter);
             this.Controls.Add(this.label2);
@@ -186,5 +283,12 @@
         private Label label2;
         private PictureBox pictureBox1;
         private Button btnClose;
+        private Label label3;
+        private Label label4;
+        private Label lblCave;
+        private Label label5;
+        private Label label6;
+        private Label lblTirroire;
+        private Label lblEmplacement;
     }
 }

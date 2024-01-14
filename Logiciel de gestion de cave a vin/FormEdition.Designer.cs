@@ -69,7 +69,7 @@
             this.btnCave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(29)))), ((int)(((byte)(36)))));
             this.btnCave.FlatAppearance.BorderSize = 0;
             this.btnCave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCave.Font = new System.Drawing.Font("Gabriola", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnCave.Font = new System.Drawing.Font("Gabriola", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnCave.ForeColor = System.Drawing.Color.White;
             this.btnCave.Location = new System.Drawing.Point(18, 123);
             this.btnCave.Name = "btnCave";
@@ -96,7 +96,7 @@
             this.btnBouteille.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(29)))), ((int)(((byte)(36)))));
             this.btnBouteille.FlatAppearance.BorderSize = 0;
             this.btnBouteille.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBouteille.Font = new System.Drawing.Font("Gabriola", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnBouteille.Font = new System.Drawing.Font("Gabriola", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnBouteille.ForeColor = System.Drawing.Color.White;
             this.btnBouteille.Location = new System.Drawing.Point(230, 123);
             this.btnBouteille.Name = "btnBouteille";
@@ -122,7 +122,7 @@
             this.btnSupprimer.BackColor = System.Drawing.Color.Maroon;
             this.btnSupprimer.FlatAppearance.BorderSize = 0;
             this.btnSupprimer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSupprimer.Font = new System.Drawing.Font("Gabriola", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnSupprimer.Font = new System.Drawing.Font("Gabriola", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnSupprimer.ForeColor = System.Drawing.Color.White;
             this.btnSupprimer.Location = new System.Drawing.Point(451, 563);
             this.btnSupprimer.Name = "btnSupprimer";
@@ -137,7 +137,7 @@
             this.btnAjout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(195)))), ((int)(((byte)(76)))));
             this.btnAjout.FlatAppearance.BorderSize = 0;
             this.btnAjout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAjout.Font = new System.Drawing.Font("Gabriola", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnAjout.Font = new System.Drawing.Font("Gabriola", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnAjout.ForeColor = System.Drawing.Color.White;
             this.btnAjout.Location = new System.Drawing.Point(955, 563);
             this.btnAjout.Name = "btnAjout";
@@ -152,7 +152,7 @@
             this.btnModifier.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(117)))), ((int)(((byte)(188)))));
             this.btnModifier.FlatAppearance.BorderSize = 0;
             this.btnModifier.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnModifier.Font = new System.Drawing.Font("Gabriola", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnModifier.Font = new System.Drawing.Font("Gabriola", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnModifier.ForeColor = System.Drawing.Color.White;
             this.btnModifier.Location = new System.Drawing.Point(774, 563);
             this.btnModifier.Name = "btnModifier";
@@ -364,15 +364,16 @@
             // 
             // lvGeneral
             // 
-            this.lvGeneral.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(29)))), ((int)(((byte)(36)))));
+            this.lvGeneral.BackColor = System.Drawing.Color.White;
             this.lvGeneral.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.lvGeneral.Font = new System.Drawing.Font("Agency FB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lvGeneral.ForeColor = System.Drawing.Color.White;
+            this.lvGeneral.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lvGeneral.ForeColor = System.Drawing.Color.Black;
             this.lvGeneral.Location = new System.Drawing.Point(18, 207);
             this.lvGeneral.Name = "lvGeneral";
             this.lvGeneral.Size = new System.Drawing.Size(418, 426);
             this.lvGeneral.TabIndex = 27;
             this.lvGeneral.UseCompatibleStateImageBehavior = false;
+            this.lvGeneral.SelectedIndexChanged += new System.EventHandler(this.lvGeneral_SelectedIndexChanged);
             this.lvGeneral.Click += new System.EventHandler(this.lvGeneral_Click);
             // 
             // label8
@@ -455,7 +456,7 @@
             this.tbxType.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tbxType.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.tbxType.ForeColor = System.Drawing.Color.White;
-            this.tbxType.Location = new System.Drawing.Point(656, 332);
+            this.tbxType.Location = new System.Drawing.Point(657, 332);
             this.tbxType.Multiline = true;
             this.tbxType.Name = "tbxType";
             this.tbxType.Size = new System.Drawing.Size(284, 33);

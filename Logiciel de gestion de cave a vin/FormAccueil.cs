@@ -6,7 +6,7 @@ namespace Logiciel_de_gestion_de_cave_a_vin
     public partial class FormAccueil : Form
     {
 
-     
+
         public FormAccueil()
         {
             InitializeComponent();
@@ -26,23 +26,23 @@ namespace Logiciel_de_gestion_de_cave_a_vin
             {
                 // Construction de la requête LINQ de manière dynamique
                 var bouteilles = from bouteille in db.Bouteilles
-                            join appelation in db.DescriptionBouteilleAppelations on bouteille.IdAppelation equals appelation.IdAppelation
-                            join couleur in db.DescriptionBouteilleCouleurs on bouteille.IdCouleur equals couleur.IdCouleur
-                            where
-                                bouteille.NomCompletVin.Contains(searchText) ||
-                                bouteille.Millesime.ToString().Contains(searchText) ||
-                                appelation.Appelation.Contains(searchText) ||
-                                couleur.CouleurVin.Contains(searchText)
-                            //select bouteille;
-                            select new
-                            {
-                                Bouteille = bouteille,
-                                Appelation = appelation.Appelation,
-                                Couleur = couleur.CouleurVin,
-                                Millesime = bouteille.Millesime,
-                              // ImagePath = // Ajoutez ici la logique pour obtenir le chemin de l'image associée à la bouteille
-                            };
-                            lvBouteille.Items.Clear();
+                                 join appelation in db.DescriptionBouteilleAppelations on bouteille.IdAppelation equals appelation.IdAppelation
+                                 join couleur in db.DescriptionBouteilleCouleurs on bouteille.IdCouleur equals couleur.IdCouleur
+                                 where
+                                     bouteille.NomCompletVin.Contains(searchText) ||
+                                     bouteille.Millesime.ToString().Contains(searchText) ||
+                                     appelation.Appelation.Contains(searchText) ||
+                                     couleur.CouleurVin.Contains(searchText)
+                                 //select bouteille;
+                                 select new
+                                 {
+                                     Bouteille = bouteille,
+                                     Appelation = appelation.Appelation,
+                                     Couleur = couleur.CouleurVin,
+                                     Millesime = bouteille.Millesime,
+                                     // ImagePath = // Ajoutez ici la logique pour obtenir le chemin de l'image associée à la bouteille
+                                 };
+                lvBouteille.Items.Clear();
                 foreach (var bouteille in bouteilles)
                 {
                     GestionBouteille.ChargerListeWithObject(lvBouteille, GestionBouteille.ChargerImage(), bouteille.Bouteille, bouteille.Appelation, bouteille.Couleur,
@@ -61,6 +61,7 @@ namespace Logiciel_de_gestion_de_cave_a_vin
         private void btnApogee_Click(object sender, EventArgs e)
         {
             lvBouteille.Items.Clear();
+            
             using (MlmvinContext db = new MlmvinContext())
             {
                 // Construction de la requête LINQ de manière dynamique
@@ -78,8 +79,15 @@ namespace Logiciel_de_gestion_de_cave_a_vin
                                  };
                 foreach (var bouteille in bouteilles)
                 {
-                    GestionBouteille.ChargerListeWithObject(lvBouteille, GestionBouteille.ChargerImage(), bouteille.Bouteille, bouteille.Appelation, bouteille.Couleur,
-                        bouteille.Millesime);
+                    int datedebut = bouteille.GardeMini + bouteille.Millesime.Year;
+                    int datefin = bouteille.GardeMaxi + bouteille.Millesime.Year;
+                    if (DateTime.Now.Year >= datedebut && DateTime.Now.Year <= datefin)
+                    {
+                        GestionBouteille.ChargerListeWithObject(lvBouteille, GestionBouteille.ChargerImage(), bouteille.Bouteille, bouteille.Appelation, bouteille.Couleur,
+                            bouteille.Millesime);
+                    }
+
+                   
                 }
 
             }
@@ -88,6 +96,29 @@ namespace Logiciel_de_gestion_de_cave_a_vin
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void lvBouteille_Click(object sender, EventArgs e)
+        {
+            Bouteille bouteilleSelectionne = (Bouteille)Utilitaire.RecupererIndexSelectionne(lvBouteille);
+            if (bouteilleSelectionne != null)
+            {
+                using (MlmvinContext db = new MlmvinContext())
+                {
+                    var bouteilleAvecCave = (from bouteille in db.Bouteilles
+                        join cave in db.Caves on bouteille.IdCave equals cave.IdCave
+                        where bouteille.IdBouteille == bouteilleSelectionne.IdBouteille
+                        select new
+                        {
+                            Bouteille = bouteille,
+                            NomCave = cave.NomCave
+                        }).FirstOrDefault();
+                    lblCave.Text = bouteilleAvecCave.NomCave;
+                    lblEmplacement.Text = bouteilleAvecCave.Bouteille.EmplacementBouteille.ToString();
+                    lblTirroire.Text = bouteilleAvecCave.Bouteille.NumeroTiroir.ToString();
+                }
+
+            }
         }
     }
 }
