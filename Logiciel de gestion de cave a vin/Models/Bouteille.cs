@@ -5,6 +5,7 @@ namespace Logiciel_de_gestion_de_cave_a_vin.Models;
 
 public partial class Bouteille
 {
+
     public int IdBouteille { get; set; }
 
     public string NomCompletVin { get; set; } = null!;

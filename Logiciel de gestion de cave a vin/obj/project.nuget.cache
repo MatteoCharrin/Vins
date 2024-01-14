@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "74aByTTqjw/aFXtfiUHK+oh1/Rh1HJ1rmpWq8YDBN1mg/4l2hHkUnOuqWzElWfRbE4eXCd7LdDFzuQkTgWuZXg==",
+  "dgSpecHash": "+AkXPLeQV3XqvvhAsYVvgJLRnjJ8kpMEAGEasxBBpIjZX3EiUp6nNGdKOz1amxuxbPS4Hz0k1quh5yEoOMJAeA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Sayo\\Documents\\Cours\\2021\\Git\\projets_charrin\\2022-2023\\GSB_Contrat\\Logiciel de gestion de cave a vin\\Logiciel de gestion de cave a vin\\Logiciel de gestion de cave a vin.csproj",
+  "projectFilePath": "C:\\Users\\Sayo\\Documents\\Cours\\2021\\Git\\projets_charrin\\2022-2023\\GSB_Contrat\\Logiciel de gestion de cave a vin\\Vins\\Logiciel de gestion de cave a vin\\Logiciel de gestion de cave a vin.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Sayo\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\Sayo\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",

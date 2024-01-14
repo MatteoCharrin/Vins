@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Sayo\\Documents\\Cours\\2021\\Git\\projets_charrin\\2022-2023\\GSB_Contrat\\Logiciel de gestion de cave a vin\\Logiciel de gestion de cave a vin\\Logiciel de gestion de cave a vin.csproj": {}
+    "C:\\Users\\Sayo\\Documents\\Cours\\2021\\Git\\projets_charrin\\2022-2023\\GSB_Contrat\\Logiciel de gestion de cave a vin\\Vins\\Logiciel de gestion de cave a vin\\Logiciel de gestion de cave a vin.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Sayo\\Documents\\Cours\\2021\\Git\\projets_charrin\\2022-2023\\GSB_Contrat\\Logiciel de gestion de cave a vin\\Logiciel de gestion de cave a vin\\Logiciel de gestion de cave a vin.csproj": {
+    "C:\\Users\\Sayo\\Documents\\Cours\\2021\\Git\\projets_charrin\\2022-2023\\GSB_Contrat\\Logiciel de gestion de cave a vin\\Vins\\Logiciel de gestion de cave a vin\\Logiciel de gestion de cave a vin.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Sayo\\Documents\\Cours\\2021\\Git\\projets_charrin\\2022-2023\\GSB_Contrat\\Logiciel de gestion de cave a vin\\Logiciel de gestion de cave a vin\\Logiciel de gestion de cave a vin.csproj",
+        "projectUniqueName": "C:\\Users\\Sayo\\Documents\\Cours\\2021\\Git\\projets_charrin\\2022-2023\\GSB_Contrat\\Logiciel de gestion de cave a vin\\Vins\\Logiciel de gestion de cave a vin\\Logiciel de gestion de cave a vin.csproj",
         "projectName": "Logiciel de gestion de cave a vin",
-        "projectPath": "C:\\Users\\Sayo\\Documents\\Cours\\2021\\Git\\projets_charrin\\2022-2023\\GSB_Contrat\\Logiciel de gestion de cave a vin\\Logiciel de gestion de cave a vin\\Logiciel de gestion de cave a vin.csproj",
+        "projectPath": "C:\\Users\\Sayo\\Documents\\Cours\\2021\\Git\\projets_charrin\\2022-2023\\GSB_Contrat\\Logiciel de gestion de cave a vin\\Vins\\Logiciel de gestion de cave a vin\\Logiciel de gestion de cave a vin.csproj",
         "packagesPath": "C:\\Users\\Sayo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Sayo\\Documents\\Cours\\2021\\Git\\projets_charrin\\2022-2023\\GSB_Contrat\\Logiciel de gestion de cave a vin\\Logiciel de gestion de cave a vin\\obj\\",
+        "outputPath": "C:\\Users\\Sayo\\Documents\\Cours\\2021\\Git\\projets_charrin\\2022-2023\\GSB_Contrat\\Logiciel de gestion de cave a vin\\Vins\\Logiciel de gestion de cave a vin\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
