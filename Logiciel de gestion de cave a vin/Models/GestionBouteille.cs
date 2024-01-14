@@ -277,9 +277,29 @@ namespace Logiciel_de_gestion_de_cave_a_vin.Models
             }
         }
 
-        public static void Delete()
+        public static void Delete(ListView listeView)
         {
+            using (MlmvinContext context = new MlmvinContext())
+            {
+                // Récupérer la bouteille existante à partir de la base de données
+                Bouteille bouteilleSelect = (Bouteille)Utilitaire.RecupererIndexSelectionne(listeView);
 
+                if (bouteilleSelect != null)
+                {
+                    // Supprimer la bouteille du contexte
+                    context.Bouteilles.Remove(bouteilleSelect);
+
+                    // Sauvegarder les changements dans la base de données
+                    context.SaveChanges();
+
+                    MessageBox.Show("Bouteille supprimée avec succès !");
+                }
+                else
+                {
+                    MessageBox.Show("Bouteille non trouvée dans la base de données.");
+                }
+            }
+            GestionBouteille.ChargerListeView(listeView);
         }
     }
 }
