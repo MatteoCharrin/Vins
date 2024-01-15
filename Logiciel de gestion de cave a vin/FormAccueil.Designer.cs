@@ -122,6 +122,7 @@
             this.lvBouteille.TabIndex = 6;
             this.lvBouteille.UseCompatibleStateImageBehavior = false;
             this.lvBouteille.Click += new System.EventHandler(this.lvBouteille_Click);
+            this.lvBouteille.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.lvBouteille_KeyPress);
             // 
             // label2
             // 

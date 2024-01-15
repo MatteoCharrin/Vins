@@ -13,7 +13,7 @@ namespace Logiciel_de_gestion_de_cave_a_vin
             GestionBouteille.ChargerListeView(lvBouteille);
             Utilitaire.ApplyBorderRadius(btnAjouter, 10);
             Utilitaire.ApplyBorderRadius(btnApogee, 10);
-
+           
 
         }
 
@@ -119,6 +119,13 @@ namespace Logiciel_de_gestion_de_cave_a_vin
                 }
 
             }
+        }
+
+        private void lvBouteille_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            
+                GestionBouteille.ChargerListeView(lvBouteille);
+            
         }
     }
 }

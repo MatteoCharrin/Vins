@@ -116,7 +116,8 @@ namespace Logiciel_de_gestion_de_cave_a_vin.Models
             var selectedAppelation = cbbAppelation.SelectedItem as DescriptionBouteilleAppelation;
             int? IdAppelation = selectedAppelation?.IdAppelation;
             var selectedcouleur = cbbCouleur.SelectedItem as DescriptionBouteilleCouleur;
-            var IDCave = cbbCave.SelectedIndex;
+            var selectedcave = cbbCave.SelectedItem as Cave;
+            var IDCave = selectedcave.IdCave;
             int? IdCouleur = selectedcouleur?.IdCouleur;
             int Emplacement = Convert.ToInt32(cbbEmplacemnt.Text);
             int Tirroire = Convert.ToInt32(cbbTiroire.Text);
@@ -145,8 +146,8 @@ namespace Logiciel_de_gestion_de_cave_a_vin.Models
                     IdCave = IDCave,
                     IdCouleur = IdCouleur.Value,
                     EmplacementBouteille = Emplacement,
-                    NumeroTiroir = Tirroire
-
+                    NumeroTiroir = Tirroire,
+                    
                 };
 
                 // Ajouter la nouvelle bouteille au contexte
