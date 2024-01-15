@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace Logiciel_de_gestion_de_cave_a_vin.Models
@@ -53,11 +54,56 @@ namespace Logiciel_de_gestion_de_cave_a_vin.Models
             return true;
         }
 
+        private static bool ValideSaisie(TextBox tbxNom, TextBox tbxMillesime, TextBox tbxGardeDebut, TextBox tbxGardeFin) // Vérification Saisie 
+        {
+            string nomBouteille = tbxNom.Text;
+            // Regex pour vérifier le format YYYY 
+            Regex regex = new Regex(@"^\d{4}$");
+            int Gardedebut, Gardefin;
+
+            // Validation du champ Nom
+            if (string.IsNullOrWhiteSpace(nomBouteille))
+            {
+                MessageBox.Show("Veuillez entrer un nom de bouteille valide.");
+                return false;
+            }
+           
+            // Validation du champ Millesime
+            if (!regex.IsMatch(tbxMillesime.Text))
+            {
+                MessageBox.Show("Veuillez entrer une date de millésime valide.");
+                return false;
+            }
+
+            // Validation du champ Garde Début
+            if (!int.TryParse(tbxGardeDebut.Text, out Gardedebut))
+            {
+                MessageBox.Show("Veuillez entrer un nombre valide pour la garde début.");
+                return false;
+            }
+
+            // Validation du champ Garde Fin
+            if (!int.TryParse(tbxGardeFin.Text, out Gardefin))
+            {
+                MessageBox.Show("Veuillez entrer un nombre valide pour la garde fin.");
+                return false;
+            }
+
+            // Si toutes les validations passent, retournez true
+            return true;
+        }
+
         public static void AjouterBouteille(ListView listView, TextBox tbxNom, TextBox tbxMillesime,
             TextBox tbxGardeDebut, TextBox tbxGardeFin, ComboBox cbbAppelation, ComboBox cbbCouleur,
             ComboBox cbbEmplacemnt, ComboBox cbbTiroire, ComboBox cbbCave)
         {
             if (!Utilitaire.ValideSaisie(tbxNom, tbxMillesime, tbxGardeDebut, tbxGardeFin))
+            {
+                // Sortir de la méthode si la validation échoue
+                return;
+            }
+
+            if (!ValideSaisie(tbxNom, tbxMillesime, tbxGardeDebut, tbxGardeFin))
             {
                 // Sortir de la méthode si la validation échoue
                 return;

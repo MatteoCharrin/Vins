@@ -64,7 +64,7 @@ namespace Logiciel_de_gestion_de_cave_a_vin.Models
 
                 // Sauvegarder les changements dans la base de données
                 context.SaveChanges();
-
+                AffichageCave(lvGeneral);
                 MessageBox.Show("Nouvelle cave ajoutée avec succès !");
             }
         }
@@ -169,6 +169,7 @@ namespace Logiciel_de_gestion_de_cave_a_vin.Models
 
                     // Sauvegarder les changements dans la base de données
                     context.SaveChanges();
+                    AffichageCave(listView);
 
                     MessageBox.Show("Cave supprimée avec succès !");
                 }
